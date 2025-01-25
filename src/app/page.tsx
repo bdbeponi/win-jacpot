@@ -36,7 +36,7 @@ export default function Home() {
     window.location.reload();
   };
 
-  const onRedirect = (country:any) =>{
+  const onRedirect = (country: any) => {
     if (country === "australia") {
       window.open(
         "https://afflat3e3.com/trk/lnk/DEF38C5D-3D3F-4998-985F-47A5DB83CAA3/?o=28454&c=918277&a=662107&k=0887A027AEB2368A0EC7A9FDBDE06FDB&l=31382",
@@ -56,7 +56,7 @@ export default function Home() {
       );
     }
     // window.location.reload();
-  }
+  };
 
   useEffect(() => {
     if (age >= 10) {
@@ -118,7 +118,7 @@ export default function Home() {
               className={` mt-8 `}
             >
               <p className="text-[20px] text-black">Select your gender:</p>
-              <Select
+              {/* <Select
                 onChange={onGenderChange}
                 className="mt-4 w-full h-[50px]"
                 placeholder="Select your gender"
@@ -132,7 +132,11 @@ export default function Home() {
                     label: "Female",
                   },
                 ]}
-              />
+              /> */}
+              <div className=" flex items-center gap-2 mt-2">
+                <Button onClick={onGenderChange}>Male</Button>
+                <Button onClick={onGenderChange}>Female</Button>
+              </div>
             </div>
           </>
         )}
@@ -145,7 +149,7 @@ export default function Home() {
               className={` mt-8 `}
             >
               <p className="text-[20px] text-black">Enter your age:</p>
-              <Input
+              {/* <Input
                 type="number"
                 placeholder="Enter your age"
                 className="mt-4 w-full h-[50px]"
@@ -153,7 +157,15 @@ export default function Home() {
                 onChange={(e: any) => {
                   setAge(e.target.value);
                 }}
-              />
+              /> */}
+              <div className=" grid grid-cols-3 items-center gap-2 mt-2">
+                  <Button onClick={()=>{setStep(3)}}>18 - 25</Button>
+                  <Button onClick={()=>{setStep(3)}}>26 - 30</Button>
+                  <Button onClick={()=>{setStep(3)}}>31 - 35</Button>
+                  <Button onClick={()=>{setStep(3)}}>36 - 34</Button>
+                  <Button onClick={()=>{setStep(3)}}>41 - 50</Button>
+                  <Button onClick={()=>{setStep(3)}}>51+</Button>
+              </div>
             </div>
           </>
         )}
@@ -166,7 +178,7 @@ export default function Home() {
               className={` mt-8 `}
             >
               <p className="text-[20px] text-black">Select your ocupation:</p>
-              <Select
+              {/* <Select
                 onChange={onOcupationChange}
                 className="mt-4 w-full h-[50px]"
                 placeholder="Select your ocupation"
@@ -188,7 +200,13 @@ export default function Home() {
                     label: "Others",
                   },
                 ]}
-              />
+              /> */}
+              <div className=" grid grid-cols-2 items-center gap-2 mt-2">
+                  <Button onClick={()=>{setStep(4)}}>Professional</Button>
+                  <Button onClick={()=>{setStep(4)}}>Business Man</Button>
+                  <Button onClick={()=>{setStep(4)}}>Student</Button>
+                  <Button onClick={()=>{setStep(4)}}>Others</Button>
+              </div>
             </div>
           </>
         )}
@@ -209,9 +227,11 @@ export default function Home() {
                 placeholder="Select your country"
               /> */}
               <div className="flex  items-center gap-2 mt-2">
-                <Button onClick={()=>{
-                  onRedirect("australia")
-                }}>
+                <Button
+                  onClick={() => {
+                    onRedirect("australia");
+                  }}
+                >
                   <Link
                     href="https://afflat3e3.com/trk/lnk/DEF38C5D-3D3F-4998-985F-47A5DB83CAA3/?o=28454&c=918277&a=662107&k=0887A027AEB2368A0EC7A9FDBDE06FDB&l=31382"
                     target="_blank"
@@ -225,9 +245,11 @@ export default function Home() {
                     Australia
                   </Link>
                 </Button>
-                <Button onClick={()=>{
-                  onRedirect("usa")
-                }}>
+                <Button
+                  onClick={() => {
+                    onRedirect("usa");
+                  }}
+                >
                   <Link
                     href="https://afflat3e1.com/trk/lnk/DEF38C5D-3D3F-4998-985F-47A5DB83CAA3/?o=28460&c=918277&a=662107&k=EBD7B9D6B4F3D02EE836429D8B9E997C&l=31388"
                     target="_blank"
@@ -241,21 +263,24 @@ export default function Home() {
                     United State
                   </Link>
                 </Button>
-                <Button className="flex items-center" onClick={()=>{
-                  onRedirect("canada")
-                }}>
-                  {/* <Link
-                    // href="https://afflat3e1.com/trk/lnk/DEF38C5D-3D3F-4998-985F-47A5DB83CAA3/?o=28516&c=918277&a=662107&k=E40E68DC1198918D919AA64D81F97DB8&l=31477"
-                    // target="_blank"
+                <Button
+                  className="flex items-center"
+                  onClick={() => {
+                    onRedirect("canada");
+                  }}
+                >
+                  <Link
+                    href="https://afflat3e1.com/trk/lnk/DEF38C5D-3D3F-4998-985F-47A5DB83CAA3/?o=28516&c=918277&a=662107&k=E40E68DC1198918D919AA64D81F97DB8&l=31477"
+                    target="_blank"
                     className="flex items-center"
-                  > */}
+                  >
                     <img
                       src="https://flagcdn.com/ca.svg"
                       alt="Canada"
                       className="w-6 h-4 mr-2"
                     />
                     Canada
-                  {/* </Link> */}
+                  </Link>
                 </Button>
               </div>
             </div>
