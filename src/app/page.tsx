@@ -226,7 +226,7 @@ export default function Home() {
                 className="mt-4 w-full h-[50px]"
                 placeholder="Select your country"
               /> */}
-              <div className="flex  items-center gap-2 mt-2">
+              <div className=" grid grid-cols-3  items-center gap-2 mt-2">
                 <Button
                   onClick={() => {
                     onRedirect("australia");
