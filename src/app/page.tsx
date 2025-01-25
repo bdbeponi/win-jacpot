@@ -158,7 +158,7 @@ export default function Home() {
                   setAge(e.target.value);
                 }}
               /> */}
-              <div className=" grid grid-cols-3 items-center gap-2 mt-2">
+              <div className=" grid grid-cols-3 max-sm:grid-cols-1 items-center gap-2 mt-2">
                   <Button onClick={()=>{setStep(3)}}>18 - 25</Button>
                   <Button onClick={()=>{setStep(3)}}>26 - 30</Button>
                   <Button onClick={()=>{setStep(3)}}>31 - 35</Button>
@@ -201,7 +201,7 @@ export default function Home() {
                   },
                 ]}
               /> */}
-              <div className=" grid grid-cols-2 items-center gap-2 mt-2">
+              <div className=" grid grid-cols-2 max-sm:grid-cols-1 items-center gap-2 mt-2">
                   <Button onClick={()=>{setStep(4)}}>Professional</Button>
                   <Button onClick={()=>{setStep(4)}}>Business Man</Button>
                   <Button onClick={()=>{setStep(4)}}>Student</Button>
@@ -226,7 +226,7 @@ export default function Home() {
                 className="mt-4 w-full h-[50px]"
                 placeholder="Select your country"
               /> */}
-              <div className=" grid grid-cols-3  items-center gap-2 mt-2">
+              <div className=" grid grid-cols-3 max-sm:grid-cols-1  items-center gap-2 mt-2">
                 <Button
                   onClick={() => {
                     onRedirect("australia");
