@@ -1,6 +1,7 @@
 "use client";
 
-import { Input, Select } from "antd";
+import { Button, Input, Select } from "antd";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -34,6 +35,28 @@ export default function Home() {
     }
     window.location.reload();
   };
+
+  const onRedirect = (country:any) =>{
+    if (country === "australia") {
+      window.open(
+        "https://afflat3e3.com/trk/lnk/DEF38C5D-3D3F-4998-985F-47A5DB83CAA3/?o=28454&c=918277&a=662107&k=0887A027AEB2368A0EC7A9FDBDE06FDB&l=31382",
+        "_blank"
+      );
+    }
+    if (country === "usa") {
+      window.open(
+        "https://afflat3e3.com/trk/lnk/DEF38C5D-3D3F-4998-985F-47A5DB83CAA3/?o=28454&c=918277&a=662107&k=0887A027AEB2368A0EC7A9FDBDE06FDB&l=31382",
+        "_blank"
+      );
+    }
+    if (country === "canada") {
+      window.open(
+        "https://afflat3e3.com/trk/lnk/DEF38C5D-3D3F-4998-985F-47A5DB83CAA3/?o=28454&c=918277&a=662107&k=0887A027AEB2368A0EC7A9FDBDE06FDB&l=31382",
+        "_blank"
+      );
+    }
+    // window.location.reload();
+  }
 
   useEffect(() => {
     if (age >= 10) {
@@ -85,12 +108,7 @@ export default function Home() {
 
   return (
     <>
-      <div className=" mx-auto max-w-[500px] w-full rounded-xl h-[250px] p-5 relative border overflow-hidden bg-white win">
-        <p className="text-[18px] text-black">
-          Enter your contact info to continue. We will contact our winner using
-          this information
-        </p>
-
+      <div className=" w-full win">
         {step === 1 && (
           <>
             <div
@@ -181,15 +199,65 @@ export default function Home() {
               // className={`mt-8 absolute top-[30%] right-[-100%] w-[90%] translate-x-[-5%] ${
               //   step === 4 ? `right-0` : `left-[-100%]`
               // } !transition-all !duration-300 `}
-              className={` mt-8 `}
+              className={` mt-8  `}
             >
               <p className="text-[20px] text-black">Select Country:</p>
-              <Select
+              {/* <Select
                 options={countryOptions}
                 onChange={onCountryChange}
                 className="mt-4 w-full h-[50px]"
                 placeholder="Select your country"
-              />
+              /> */}
+              <div className="flex  items-center gap-2 mt-2">
+                <Button onClick={()=>{
+                  onRedirect("australia")
+                }}>
+                  <Link
+                    href="https://afflat3e3.com/trk/lnk/DEF38C5D-3D3F-4998-985F-47A5DB83CAA3/?o=28454&c=918277&a=662107&k=0887A027AEB2368A0EC7A9FDBDE06FDB&l=31382"
+                    target="_blank"
+                    className="flex items-center"
+                  >
+                    <img
+                      src="https://cdn.britannica.com/78/6078-050-18D5DEFE/Flag-Australia.jpg"
+                      alt="Australia"
+                      className="w-6 h-4 mr-2"
+                    />
+                    Australia
+                  </Link>
+                </Button>
+                <Button onClick={()=>{
+                  onRedirect("usa")
+                }}>
+                  <Link
+                    href="https://afflat3e1.com/trk/lnk/DEF38C5D-3D3F-4998-985F-47A5DB83CAA3/?o=28460&c=918277&a=662107&k=EBD7B9D6B4F3D02EE836429D8B9E997C&l=31388"
+                    target="_blank"
+                    className="flex items-center"
+                  >
+                    <img
+                      src="https://flagcdn.com/us.svg"
+                      alt="USA"
+                      className="w-6 h-4 mr-2"
+                    />
+                    United State
+                  </Link>
+                </Button>
+                <Button className="flex items-center" onClick={()=>{
+                  onRedirect("canada")
+                }}>
+                  {/* <Link
+                    // href="https://afflat3e1.com/trk/lnk/DEF38C5D-3D3F-4998-985F-47A5DB83CAA3/?o=28516&c=918277&a=662107&k=E40E68DC1198918D919AA64D81F97DB8&l=31477"
+                    // target="_blank"
+                    className="flex items-center"
+                  > */}
+                    <img
+                      src="https://flagcdn.com/ca.svg"
+                      alt="Canada"
+                      className="w-6 h-4 mr-2"
+                    />
+                    Canada
+                  {/* </Link> */}
+                </Button>
+              </div>
             </div>
           </>
         )}
