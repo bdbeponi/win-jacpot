@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const poppins = Poppins({
+export const poppins:any = Poppins({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-poppins",
