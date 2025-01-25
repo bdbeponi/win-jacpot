@@ -151,7 +151,7 @@ export default function Home() {
               <Select
                 onChange={onOcupationChange}
                 className="mt-4 w-full h-[50px]"
-                placeholder="Select your gender"
+                placeholder="Select your ocupation"
                 options={[
                   {
                     value: "Professional",
