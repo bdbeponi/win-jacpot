@@ -1,5 +1,6 @@
 @tailwind base;
+.win {
+  font-family: var(--font-poppins);
+}
 @tailwind components;
 @tailwind utilities;
-
-

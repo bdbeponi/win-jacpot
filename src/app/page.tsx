@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [step, setStep] = useState(1);
-  const [age, setAge]:any = useState(null);
+  const [age, setAge]: any = useState(null);
 
   const onGenderChange = () => {
     setStep(2);
@@ -85,104 +85,114 @@ export default function Home() {
 
   return (
     <>
-      <div className=" mx-auto max-w-[500px] w-full rounded-xl h-[250px] p-5 relative border overflow-hidden bg-white">
+      <div className=" mx-auto max-w-[500px] w-full rounded-xl h-[250px] p-5 relative border overflow-hidden bg-white win">
         <p className="text-[18px] text-black">
           Enter your contact info to continue. We will contact our winner using
           this information
         </p>
 
-        <>
-          <div
-            className={`mt-8 absolute top-[30%] right-[-100%] w-[90%] translate-x-[-5%] ${
-              step === 1 ? `right-0` : `left-[-100%]`
-            } !transition-all !duration-300 `}
-          >
-            <p className="text-[20px] text-black">Select your gender:</p>
-            <Select
-              onChange={onGenderChange}
-              className="mt-4 w-full h-[50px]"
-              placeholder="Select your gender"
-              options={[
-                {
-                  value: "Male",
-                  label: "Male",
-                },
-                {
-                  value: "Female",
-                  label: "Female",
-                },
-              ]}
-            />
-          </div>
-        </>
+        {step === 1 && (
+          <>
+            <div
+              // className={`mt-8 absolute top-[30%] right-[-100%] w-[90%] translate-x-[-5%] ${
+              //   step === 1 ? `right-0` : `left-[-100%]`
+              // } !transition-all !duration-300 `}
+              className={` mt-8 `}
+            >
+              <p className="text-[20px] text-black">Select your gender:</p>
+              <Select
+                onChange={onGenderChange}
+                className="mt-4 w-full h-[50px]"
+                placeholder="Select your gender"
+                options={[
+                  {
+                    value: "Male",
+                    label: "Male",
+                  },
+                  {
+                    value: "Female",
+                    label: "Female",
+                  },
+                ]}
+              />
+            </div>
+          </>
+        )}
+        {step === 2 && (
+          <>
+            <div
+              // className={`mt-8 absolute top-[30%] right-[-100%] w-[90%] translate-x-[-5%] ${
+              //   step === 2 ? `right-0` : `left-[-100%]`
+              // } !transition-all !duration-300 `}
+              className={` mt-8 `}
+            >
+              <p className="text-[20px] text-black">Enter your age:</p>
+              <Input
+                type="number"
+                placeholder="Enter your age"
+                className="mt-4 w-full h-[50px]"
+                value={age}
+                onChange={(e: any) => {
+                  setAge(e.target.value);
+                }}
+              />
+            </div>
+          </>
+        )}
+        {step === 3 && (
+          <>
+            <div
+              // className={`mt-8 absolute top-[30%] right-[-100%] w-[90%] translate-x-[-5%] ${
+              //   step === 3 ? `right-0` : `left-[-100%]`
+              // } !transition-all !duration-300 `}
+              className={` mt-8 `}
+            >
+              <p className="text-[20px] text-black">Select your ocupation:</p>
+              <Select
+                onChange={onOcupationChange}
+                className="mt-4 w-full h-[50px]"
+                placeholder="Select your gender"
+                options={[
+                  {
+                    value: "Professional",
+                    label: "Professional",
+                  },
+                  {
+                    value: "Business Man",
+                    label: "Business Man",
+                  },
+                  {
+                    value: "Student",
+                    label: "Student",
+                  },
+                  {
+                    value: "Others",
+                    label: "Others",
+                  },
+                ]}
+              />
+            </div>
+          </>
+        )}
 
-        <>
-          <div
-            className={`mt-8 absolute top-[30%] right-[-100%] w-[90%] translate-x-[-5%] ${
-              step === 2 ? `right-0` : `left-[-100%]`
-            } !transition-all !duration-300 `}
-          >
-            <p className="text-[20px] text-black">Enter your age:</p>
-            <Input
-              type="number"
-              placeholder="Enter your age"
-              className="mt-4 w-full h-[50px]"
-              value={age}
-              onChange={(e: any) => {
-                setAge(e.target.value);
-              }}
-            />
-          </div>
-        </>
-
-        <>
-          <div
-            className={`mt-8 absolute top-[30%] right-[-100%] w-[90%] translate-x-[-5%] ${
-              step === 3 ? `right-0` : `left-[-100%]`
-            } !transition-all !duration-300 `}
-          >
-            <p className="text-[20px] text-black">Select your ocupation:</p>
-            <Select
-              onChange={onOcupationChange}
-              className="mt-4 w-full h-[50px]"
-              placeholder="Select your gender"
-              options={[
-                {
-                  value: "Professional",
-                  label: "Professional",
-                },
-                {
-                  value: "Business Man",
-                  label: "Business Man",
-                },
-                {
-                  value: "Student",
-                  label: "Student",
-                },
-                {
-                  value: "Others",
-                  label: "Others",
-                },
-              ]}
-            />
-          </div>
-        </>
-
-        <>
-          <div
-            className={`mt-8 absolute top-[30%] right-[-100%] w-[90%] translate-x-[-5%] ${
-              step === 4 ? `right-0` : `left-[-100%]`
-            } !transition-all !duration-300 `}
-          >
-            <p className="text-[20px] text-black">Select Country:</p>
-            <Select
-              options={countryOptions}
-              onChange={onCountryChange}
-              className="mt-4 w-full h-[50px]"
-              placeholder="Select your country"
-            />
-          </div>
-        </>
+        {step === 4 && (
+          <>
+            <div
+              // className={`mt-8 absolute top-[30%] right-[-100%] w-[90%] translate-x-[-5%] ${
+              //   step === 4 ? `right-0` : `left-[-100%]`
+              // } !transition-all !duration-300 `}
+              className={` mt-8 `}
+            >
+              <p className="text-[20px] text-black">Select Country:</p>
+              <Select
+                options={countryOptions}
+                onChange={onCountryChange}
+                className="mt-4 w-full h-[50px]"
+                placeholder="Select your country"
+              />
+            </div>
+          </>
+        )}
       </div>
     </>
   );
